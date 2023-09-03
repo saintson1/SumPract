@@ -85,7 +85,7 @@ class _camera {
 
   // Camera set default values function.
   setDef() {
-    this.loc = vec3(8, 5, 0);
+    this.loc = vec3(10);
     this.at = vec3(0, 0, 0);
     this.dir = vec3(0, 0, -1);
     this.up = vec3(0, 1, 0);
