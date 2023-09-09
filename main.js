@@ -1,4 +1,3 @@
-/** http://192.168.30.103:8080/*/
 import { render } from "./src/rnd/render.js";
 
 export function main() {
