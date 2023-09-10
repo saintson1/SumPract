@@ -8,26 +8,28 @@ class _animation {
   }
   draw() {
     for (let i = 0; i < this.units.unitsArray.length; i++) {
-      if (this.units.unitsArray[i].prim.shd.prog.then == undefined) {
-        if (this.units.unitsArray[i].drawType == undefined)
-          this.units.unitsArray[i].drawType = gl.TRIANGLE_STRIP;
-        if (this.units.unitsArray[i].offset == undefined)
-          this.units.unitsArray[i].offset = 0;
+      if (window.topologyState == i) {
+        if (this.units.unitsArray[i].prim.shd.prog.then == undefined) {
+          if (this.units.unitsArray[i].drawType == undefined)
+            this.units.unitsArray[i].drawType = gl.TRIANGLE_STRIP;
+          if (this.units.unitsArray[i].offset == undefined)
+            this.units.unitsArray[i].offset = 0;
 
-        this.units.unitsArray[i].response();
-        this.uboMatrixResponse(i);
+          this.units.unitsArray[i].response();
+          this.uboMatrixResponse(i);
 
-        this.units.unitsArray[i].prim.vertex_buffer.apply();
-        this.units.unitsArray[i].prim.index_buffer.apply();
-        if (this.units.unitsArray[i].ubo != undefined)
-          this.units.unitsArray[i].ubo.apply();
-        gl.useProgram(this.units.unitsArray[i].prim.shd.prog);
-        gl.drawElements(
-          this.units.unitsArray[i].drawType,
-          this.units.unitsArray[i].prim.numOfVertex,
-          gl.UNSIGNED_SHORT,
-          this.units.unitsArray[i].offset
-        );
+          this.units.unitsArray[i].prim.vertex_buffer.apply();
+          this.units.unitsArray[i].prim.index_buffer.apply();
+          if (this.units.unitsArray[i].ubo != undefined)
+            this.units.unitsArray[i].ubo.apply();
+          gl.useProgram(this.units.unitsArray[i].prim.shd.prog);
+          gl.drawElements(
+            this.units.unitsArray[i].drawType,
+            this.units.unitsArray[i].prim.numOfVertex,
+            gl.UNSIGNED_SHORT,
+            this.units.unitsArray[i].offset
+          );
+        }
       }
     }
   }

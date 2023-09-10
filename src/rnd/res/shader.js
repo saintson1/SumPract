@@ -24,7 +24,9 @@ class _shader {
     if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
       const buf = gl.getShaderInfoLog(shader);
       console.error(buf);
-      alert(this.fileNamePrefix + "/" + typeName + "shader: Compile error!!!");
+      alert(
+        this.fileNamePrefix + "/" + typeName + "/" + "shader: Compile error!!!"
+      );
     }
 
     return shader;

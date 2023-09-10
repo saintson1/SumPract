@@ -1,5 +1,9 @@
 import { render } from "./src/rnd/render.js";
 
+const press = (val) => {
+  window.topologyState = val;
+};
+
 export function main() {
   let rnd = render();
   window.addEventListener("load", () => {

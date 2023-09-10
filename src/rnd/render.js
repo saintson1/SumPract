@@ -7,6 +7,22 @@ class _render {
     this.anim = animation();
   }
   draw() {
+    document.querySelector("#button0").onclick = () => {
+      window.topologyState = 0;
+    };
+    document.querySelector("#button1").onclick = () => {
+      window.topologyState = 1;
+    };
+    document.querySelector("#button2").onclick = () => {
+      window.topologyState = 2;
+    };
+    document.querySelector("#button3").onclick = () => {
+      window.topologyState = 3;
+    };
+    document.querySelector("#button4").onclick = () => {
+      window.topologyState = 4;
+    };
+
     this.anim.draw();
   }
 
